@@ -1,7 +1,9 @@
 FROM ubuntu:16.04
 
 MAINTAINER Yannic Wilkening
-EXPOSE 80 3389
+
+EXPOSE 3389
+EXPOSE 8080
 
 RUN usermod -a -G dialout root
 
