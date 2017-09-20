@@ -19,14 +19,14 @@ RUN apt-get update && apt-get install -y \
 	
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN wget https://www.dresden-elektronik.de/deconz/ubuntu/beta/deconz-2.04.67-qt5.deb && \
-	wget https://www.dresden-elektronik.de/deconz/ubuntu/beta/deconz-dev-2.04.67.deb && \
-	dpkg -i deconz-2.04.67-qt5.deb && \
-	dpkg -i deconz-dev-2.04.67.deb
+RUN wget https://www.dresden-elektronik.de/deconz/ubuntu/beta/deconz-2.04.77-qt5.deb && \
+	wget https://www.dresden-elektronik.de/deconz/ubuntu/beta/deconz-dev-2.04.77.deb && \
+	dpkg -i deconz-2.04.77-qt5.deb && \
+	dpkg -i deconz-dev-2.04.77.deb
 
 RUN git clone https://github.com/dresden-elektronik/deconz-rest-plugin.git && \
 	cd deconz-rest-plugin && \
-	git checkout -b mybranch V2_04_67 && \
+	git checkout -b mybranch V2_04_77 && \
 	qmake && \
 	make -j2 && \
 	cp ../libde_rest_plugin.so /usr/share/deCONZ/plugins
